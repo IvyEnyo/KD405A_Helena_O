@@ -35,6 +35,7 @@ import java.awt.CardLayout;
 import javax.swing.JTable;
 
 public class Main extends JFrame {
+	private static final Object[] ng = null;
 	private JTable table;
 
 	/**
@@ -62,20 +63,52 @@ public class Main extends JFrame {
 		getContentPane().setForeground(Color.WHITE);
 		getContentPane().setLayout(null);
 		
+		
+
+		String[] columns = new String[]{
+				"Namn"
+		};
+		
+		Object[][] data = new Object[][] {
+			{"Malin Andersson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+			{"Hannes Nilsson"},
+				
+		};
+		
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(6, 6, 132, 244);
+		getContentPane().add(scrollPane);
+		
 	
-		table = new JTable();
-		table.setRowSelectionAllowed(5);
-		table.setBounds(17, 6, 409, 233);
-		
-		
-		
-		getContentPane().add(table);
+		table = new JTable(data, columns);
+		scrollPane.setViewportView(table);
+		table.setShowHorizontalLines(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+		
 
 		
 		
-		JMenuBar mb = new JMenuBar();
+		JMenuBar menuBar = new JMenuBar();
 		JMenu iMen = new JMenu("Arkiv");
 		JMenuItem printOut = new JMenuItem("skriv ut");
 		JMenuItem cansle = new JMenuItem("avsluta");
