@@ -17,6 +17,7 @@ import java.awt.Color;
 import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
 import javax.swing.JList;
+import javax.swing.JMenu;
 import javax.swing.AbstractListModel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -27,8 +28,14 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import java.awt.Label;
 import javax.swing.border.LineBorder;
+import javax.swing.table.TableModel;
+import javax.swing.JButton;
+import javax.swing.JTabbedPane;
+import java.awt.CardLayout;
+import javax.swing.JTable;
 
 public class Main extends JFrame {
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -50,35 +57,49 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
-		getContentPane().setBackground(new Color(255, 255, 255));
+		getContentPane().setBackground(new Color(0, 191, 255));
 		setBackground(Color.BLACK);
 		getContentPane().setForeground(Color.WHITE);
 		getContentPane().setLayout(null);
 		
-		JList list = new JList();
-		list.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Axelsson, Maria", "Andersson, Lisa", "Fredriksson, Håkan "};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		list.setBorder(new LineBorder(new Color(0, 0, 0), 4, true));
-		list.setBounds(-1, 0, 113, 257);
-		getContentPane().add(list);
+	
+		table = new JTable();
+		table.setRowSelectionAllowed(5);
+		table.setBounds(17, 6, 409, 233);
+		
+		
+		
+		getContentPane().add(table);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+
 		
-		JMenuBar menuBar = new JMenuBar();
-		JMenuItem iMen = new JMenuItem("Arkiv");
-		JMenuItem iMen1 = new JMenuItem("Medlem");
-		JMenuItem iMen2 = new JMenuItem("Hjälp");
 		
-		setJMenuBar(menuBar);
+		JMenuBar mb = new JMenuBar();
+		JMenu iMen = new JMenu("Arkiv");
+		JMenuItem printOut = new JMenuItem("skriv ut");
+		JMenuItem cansle = new JMenuItem("avsluta");
+		
+		JMenu iMen1 = new JMenu("Medlem");
+		JMenuItem newMember = new JMenuItem("Ny medlem");
+		JMenuItem findMember = new JMenuItem("Hitta medlem");
+		
+		JMenu iMen2 = new JMenu("Hjälp");
+		JMenuItem help = new JMenuItem("Hjälp");
+		JMenuItem aboutProgram = new JMenuItem("Om programmet");
+		
+		setJMenuBar(new JMenuBar());
 		getJMenuBar().add(iMen);
+		iMen.add(printOut); iMen.add(cansle);
 		getJMenuBar().add(iMen1);
+		iMen1.add(newMember); iMen1.add(findMember);
 		getJMenuBar().add(iMen2);
-	}
+		iMen2.add(help); iMen2.add(aboutProgram);
+		
+	
+		
+		
+		
+		
+}
 }
