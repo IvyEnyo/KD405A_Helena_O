@@ -33,6 +33,7 @@ import javax.swing.JButton;
 import javax.swing.JTabbedPane;
 import java.awt.CardLayout;
 import javax.swing.JTable;
+import java.awt.Font;
 
 public class Main extends JFrame {
 	private static final Object[] ng = null;
@@ -102,10 +103,30 @@ public class Main extends JFrame {
 		table = new JTable(data, columns);
 		scrollPane.setViewportView(table);
 		table.setShowHorizontalLines(true);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("/Users/helenaolsson/Documents/KD405A_Helena_O/Assigment_1/img/head.jpg"));
+		lblNewLabel.setBounds(152, 6, 108, 120);
+		getContentPane().add(lblNewLabel);
+		
+		JTextArea txtrMalinAndersson = new JTextArea();
+		txtrMalinAndersson.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
+		txtrMalinAndersson.setText("Malin Andersson\n1987-05-04\n\nKontakt uppgifter\n 040-112233\n Malin.Andersson@gmail.com\n");
+		txtrMalinAndersson.setBounds(272, 9, 172, 153);
+		getContentPane().add(txtrMalinAndersson);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
+	/*	table.addMouseListener(new java.awt.event.MouseAdapter() {
+			public void mouseClicked(java.awt.event.MouseEvent evt) {
+			int row = table.rowAtPoint(evt.getPoint());
+			int col = table.columnAtPoint(evt.getPoint());
+			if (row >= 0 && col >= 0) {
 
+			}
+}
+			});
+*/
 		
 		
 		JMenuBar menuBar = new JMenuBar();
