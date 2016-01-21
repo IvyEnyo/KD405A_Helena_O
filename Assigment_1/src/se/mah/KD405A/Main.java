@@ -18,6 +18,10 @@ import javax.swing.AbstractListModel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.Box;
+import javax.swing.JComboBox;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 public class Main extends JFrame {
 
@@ -44,9 +48,13 @@ public class Main extends JFrame {
 		getContentPane().setBackground(new Color(255, 255, 255));
 		setBackground(Color.BLACK);
 		getContentPane().setForeground(Color.WHITE);
-		getContentPane().setLayout(new BorderLayout(0, 0));
+		getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		getContentPane().add(scrollPane);
 		
 		JList list = new JList();
+		scrollPane.setViewportView(list);
 		list.setModel(new AbstractListModel() {
 			String[] values = new String[] {"Andersson, Hanna", "Axelsson, Niklas", "Fredriksson, Håkan ", "Fransson, Irina", "Larsson, Hugo", "Mattson, Mikael", "Olsson, Maria", "Olsson, Jessica"};
 			public int getSize() {
@@ -56,16 +64,18 @@ public class Main extends JFrame {
 				return values[index];
 			}
 		});
-		getContentPane().add(list, BorderLayout.WEST);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
 		JMenuBar menuBar = new JMenuBar();
 		JMenuItem iMen = new JMenuItem("Arkiv");
-		
+		JMenuItem iMen1 = new JMenuItem("Medlem");
+		JMenuItem iMen2 = new JMenuItem("Hjälp");
 		
 		setJMenuBar(menuBar);
 		getJMenuBar().add(iMen);
+		getJMenuBar().add(iMen1);
+		getJMenuBar().add(iMen2);
 	}
 
 }
