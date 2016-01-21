@@ -7,7 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.FlowLayout;
+import java.awt.Image;
+
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import java.awt.List;
 import java.awt.Color;
@@ -22,6 +25,8 @@ import javax.swing.JComboBox;
 import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import java.awt.Label;
+import javax.swing.border.LineBorder;
 
 public class Main extends JFrame {
 
@@ -48,15 +53,11 @@ public class Main extends JFrame {
 		getContentPane().setBackground(new Color(255, 255, 255));
 		setBackground(Color.BLACK);
 		getContentPane().setForeground(Color.WHITE);
-		getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		JScrollPane scrollPane = new JScrollPane();
-		getContentPane().add(scrollPane);
+		getContentPane().setLayout(null);
 		
 		JList list = new JList();
-		scrollPane.setViewportView(list);
 		list.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Andersson, Hanna", "Axelsson, Niklas", "Fredriksson, Håkan ", "Fransson, Irina", "Larsson, Hugo", "Mattson, Mikael", "Olsson, Maria", "Olsson, Jessica"};
+			String[] values = new String[] {"Axelsson, Maria", "Andersson, Lisa", "Fredriksson, Håkan "};
 			public int getSize() {
 				return values.length;
 			}
@@ -64,6 +65,9 @@ public class Main extends JFrame {
 				return values[index];
 			}
 		});
+		list.setBorder(new LineBorder(new Color(0, 0, 0), 4, true));
+		list.setBounds(-1, 0, 113, 257);
+		getContentPane().add(list);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
@@ -77,5 +81,4 @@ public class Main extends JFrame {
 		getJMenuBar().add(iMen1);
 		getJMenuBar().add(iMen2);
 	}
-
 }
