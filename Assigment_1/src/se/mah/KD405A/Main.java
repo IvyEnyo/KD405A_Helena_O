@@ -48,7 +48,7 @@ public class Main extends JFrame {
 		
 		JList list = new JList();
 		list.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Andersson, Hanna", "Axelsson, Niklas", "Fredriksson, Håkan ", "Fransson, Irina"};
+			String[] values = new String[] {"Andersson, Hanna", "Axelsson, Niklas", "Fredriksson, Håkan ", "Fransson, Irina", "Larsson, Hugo", "Mattson, Mikael", "Olsson, Maria", "Olsson, Jessica"};
 			public int getSize() {
 				return values.length;
 			}
@@ -61,7 +61,11 @@ public class Main extends JFrame {
 		setBounds(100, 100, 450, 300);
 		
 		JMenuBar menuBar = new JMenuBar();
+		JMenuItem iMen = new JMenuItem("Arkiv");
+		
+		
 		setJMenuBar(menuBar);
+		getJMenuBar().add(iMen);
 	}
 
 }
