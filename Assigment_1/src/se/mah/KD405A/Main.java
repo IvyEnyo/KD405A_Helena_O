@@ -73,13 +73,13 @@ public class Main extends JFrame {
 		Object[][] data = new Object[][] {
 			{"Malin Andersson"},
 			{"Hannes Nilsson"},
-			{"Hannes Nilsson"},
-			{"Hannes Nilsson"},
-			{"Hannes Nilsson"},
-			{"Hannes Nilsson"},
-			{"Hannes Nilsson"},
-			{"Hannes Nilsson"},
-			{"Hannes Nilsson"},
+			{"Mathias Nilsson"},
+			{"Maria Olsson"},
+			{"Sven Olofsson"},
+			{"Johan Svensson"},
+			{"Hanna Sigrudsson"},
+			{"Sven Johansson"},
+			{"Johanna Johansson"},
 			{"Hannes Nilsson"},
 			{"Hannes Nilsson"},
 			{"Hannes Nilsson"},
@@ -106,14 +106,27 @@ public class Main extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("/Users/helenaolsson/Documents/KD405A_Helena_O/Assigment_1/img/head.jpg"));
-		lblNewLabel.setBounds(152, 6, 108, 120);
+		lblNewLabel.setBounds(150, 6, 108, 120);
 		getContentPane().add(lblNewLabel);
 		
 		JTextArea txtrMalinAndersson = new JTextArea();
-		txtrMalinAndersson.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
-		txtrMalinAndersson.setText("Malin Andersson\n1987-05-04\n\nKontakt uppgifter\n 040-112233\n Malin.Andersson@gmail.com\n");
-		txtrMalinAndersson.setBounds(272, 9, 172, 153);
+		txtrMalinAndersson.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
+		txtrMalinAndersson.setText(" Malin Andersson\n 1987-05-04\n \n  Kontakt uppgifter\n  040-112233\n  Malin.Andersson@gmail.com\n");
+		txtrMalinAndersson.setBounds(270, 117, 172, 120);
 		getContentPane().add(txtrMalinAndersson);
+		
+		JButton btnNewButton = new JButton("Spara");
+		btnNewButton.setBounds(150, 157, 117, 29);
+		getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Ändra");
+		btnNewButton_1.setBounds(150, 128, 117, 29);
+		getContentPane().add(btnNewButton_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("/Users/helenaolsson/Documents/KD405A_Helena_O/Assigment_1/img/malmo.png"));
+		lblNewLabel_1.setBounds(366, 6, 78, 106);
+		getContentPane().add(lblNewLabel_1);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
