@@ -42,3 +42,5 @@ local.properties
 
 # STS (Spring Tool Suite)
 .springBeans
+
+.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/segments.gen
