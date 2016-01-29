@@ -1,5 +1,6 @@
 
 public class House {
+	
 	private int yearBuilt; 
 	private int size; 
 	private final int minSize = 10;
@@ -9,6 +10,7 @@ public class House {
 		this.yearBuilt = yearBuilt;
 		this.size = size;
 	}
+	
 	public int getYearBuilt() {
 		if (this.yearBuilt > 2015) {
 			return 2015;
