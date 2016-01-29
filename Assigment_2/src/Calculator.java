@@ -41,13 +41,13 @@ public class Calculator {
 		this.operand = 0;
 	}
 	
-	public void plus(){
+	public void add(){
 	   this.result = this.operand;
 	   this.operand = 0;
 	   this.operator = "+";
 	}
 	
-	public void minus(){
+	public void subst(){
 		result = operand;
 		operand = 0;
 		operator = "-";
