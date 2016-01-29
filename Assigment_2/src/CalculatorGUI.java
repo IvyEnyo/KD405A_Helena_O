@@ -8,6 +8,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 public class CalculatorGUI extends JFrame {
 
@@ -40,6 +41,13 @@ public class CalculatorGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		
+		JTextField textField = new JTextField();
+		textField.setBounds(25, 17, 293, 45);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
 		JButton button = new JButton("0");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -51,6 +59,7 @@ public class CalculatorGUI extends JFrame {
 		JButton button_1 = new JButton("1");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		button_1.setBounds(155, 166, 65, 47);
@@ -120,36 +129,36 @@ public class CalculatorGUI extends JFrame {
 		button_9.setBounds(25, 72, 65, 47);
 		contentPane.add(button_9);
 		
-		JButton btnNewButton = new JButton("x");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnMulti = new JButton("x");
+		btnMulti.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(219, 72, 49, 67);
-		contentPane.add(btnNewButton);
+		btnMulti.setBounds(219, 72, 49, 67);
+		contentPane.add(btnMulti);
 		
-		JButton button_10 = new JButton("+");
-		button_10.addActionListener(new ActionListener() {
+		JButton btnAdd = new JButton("+");
+		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_10.setBounds(219, 146, 49, 67);
-		contentPane.add(button_10);
+		btnAdd.setBounds(219, 146, 49, 67);
+		contentPane.add(btnAdd);
 		
-		JButton button_11 = new JButton("-");
-		button_11.addActionListener(new ActionListener() {
+		JButton btnSub = new JButton("-");
+		btnSub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_11.setBounds(270, 72, 49, 67);
-		contentPane.add(button_11);
+		btnSub.setBounds(270, 72, 49, 67);
+		contentPane.add(btnSub);
 		
-		JButton button_12 = new JButton("=");
-		button_12.addActionListener(new ActionListener() {
+		JButton btnequal = new JButton("=");
+		btnequal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_12.setBounds(270, 146, 49, 67);
-		contentPane.add(button_12);
+		btnequal.setBounds(270, 146, 49, 67);
+		contentPane.add(btnequal);
 	}
 }
