@@ -92,7 +92,7 @@ public class HouseGUI extends JFrame {
 		
 		Random randomGen = new Random();
 		
-		// Loops out 100 random houses into the Arraylist
+		// Loops out 100 random houses into the Array list
 		for (int i = 0; i < 100; i++) {
 			
 			int year = randomGen.nextInt(2015 - 1800) + 1800;
