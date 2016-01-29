@@ -213,8 +213,8 @@ public class CalculatorGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				myCalculator.equals();
-				int i = myCalculator.getResult();
-				textField.setText(String.valueOf(i));
+				textField.setText(String.valueOf(myCalculator.getResult()));
+
 			}
 		});
 		
