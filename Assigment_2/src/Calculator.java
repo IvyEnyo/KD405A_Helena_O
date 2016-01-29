@@ -41,7 +41,7 @@ public class Calculator {
 		this.operand = 0;
 	}
 	
-	public void add(){
+	public void addi(){
 	   this.result = this.operand;
 	   this.operand = 0;
 	   this.operator = "+";
