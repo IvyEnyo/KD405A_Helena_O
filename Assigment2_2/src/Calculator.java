@@ -1,6 +1,6 @@
+import src.String;
 
 public class Calculator {
-	
 	private String operator;
 	private int result;
 	private int operand;
@@ -69,4 +69,5 @@ public class Calculator {
 		}
 		operand = 0;
 	}
+
 }
