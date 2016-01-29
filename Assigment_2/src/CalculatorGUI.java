@@ -92,7 +92,7 @@ public class CalculatorGUI extends JFrame {
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				textField.setText(textField.getText() +"3");
+				textField.setText(textField.getText() + "3");
 				myCalculator.numberButtonPressed(3);
 			}
 		});
@@ -104,7 +104,7 @@ public class CalculatorGUI extends JFrame {
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				textField.setText(textField.getText() +"4");
+				textField.setText(textField.getText() + "4");
 				myCalculator.numberButtonPressed(4);
 			}
 		});
@@ -136,7 +136,7 @@ public class CalculatorGUI extends JFrame {
 		button_6.setBounds(25, 119, 65, 47);
 		contentPane.add(button_6);
 		
-		JButton button_7 = new JButton(textField.getText() + "7");
+		JButton button_7 = new JButton("7");
 		button_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -148,7 +148,7 @@ public class CalculatorGUI extends JFrame {
 		button_7.setBounds(155, 72, 65, 47);
 		contentPane.add(button_7);
 		
-		JButton button_8 = new JButton(textField.getText() + "8");
+		JButton button_8 = new JButton("8");
 		button_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -232,6 +232,7 @@ public class CalculatorGUI extends JFrame {
 		
 		btnClear.setBounds(225, 214, 95, 42);
 		contentPane.add(btnClear);
-		
 	}
+	
+	
 }
