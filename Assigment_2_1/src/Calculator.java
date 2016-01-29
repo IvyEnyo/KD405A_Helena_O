@@ -1,26 +1,24 @@
-import src.String;
-
+/**Class that simulates a calculator*/
 public class Calculator {
 	private String operator;
 	private int result;
 	private int operand;
-	
 	//Using this when referring to instance variables makes it extra obvious that the reference 
 	//is to an instance variable. Writing this.operator is the same as  just writing operator
 	
-	//Creates  a new calculator instance
+	/**Creates  a new calculator instance*/
 	public Calculator() {
 		this.operator = "";
 		this.result = 0;
 		this.operand = 0; //http://en.wikipedia.org/wiki/Operand
 	}
 	
-	// Returns the operator 
+	/** returns the operator */
 	public String getOperator(){
 		return this.operator;
 	}
 	
-	// Returns result
+	/**returns result*/
 	public int getResult(){
 		return this.result;
 	}
@@ -29,7 +27,7 @@ public class Calculator {
 		return this.operand;	
 	}
 	
-	// Button pressed
+	/**buttonpress*/ 
 	public void numberButtonPressed(int number){
 	  this.operand = this.operand*10 + number;
 	}
@@ -41,13 +39,13 @@ public class Calculator {
 		this.operand = 0;
 	}
 	
-	public void addi(){
+	public void plus(){
 	   this.result = this.operand;
 	   this.operand = 0;
 	   this.operator = "+";
 	}
 	
-	public void subst(){
+	public void minus(){
 		result = operand;
 		operand = 0;
 		operator = "-";
@@ -69,5 +67,4 @@ public class Calculator {
 		}
 		operand = 0;
 	}
-
 }
