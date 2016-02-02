@@ -22,14 +22,13 @@ public class Bike {
 	
 	public int getPrice() {
 		return this.price;
-		
 	}
 	
 	public int getSize() {
 		return this.price;
 	}
 	public void setPrice(int price) {
-		
+		//code
 	}
 	
 }
