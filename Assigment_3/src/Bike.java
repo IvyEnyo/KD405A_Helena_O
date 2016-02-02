@@ -8,28 +8,28 @@ public class Bike {
 		this.color = color; 
 		this.size = size; 
 	}
+	
 	public Bike (String color, int size, int price) {
 		this.color = color; 
 		this.size = size; 	
 		this.price = price; 
 	}
 	
-	public getColor() {
-
+	//Methods
+	public String getColor() {
+		return this.color; 
 	}
 	
-	public getSize() {
+	public int getPrice() {
+		return this.price;
 		
 	}
 	
-	public getSize() {
+	public int getSize() {
+		return this.price;
+	}
+	public void setPrice(int price) {
 		
 	}
 	
-	public getPrice() {
-		
-	}
-	public setPrice(int price) {
-	
-	}
 }
