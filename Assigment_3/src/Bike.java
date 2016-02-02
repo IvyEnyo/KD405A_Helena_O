@@ -10,7 +10,7 @@ public class Bike {
 	}
 	public Bike (String color, int size, int price) {
 		this.color = color; 
-		this.size = size; 
+		this.size = size; 	
 		this.price = price; 
 	}
 	
