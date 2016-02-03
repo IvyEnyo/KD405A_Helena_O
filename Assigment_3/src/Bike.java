@@ -2,14 +2,17 @@
 public class Bike {
 	private String color;
 	private int price;
-	private int size; 
+	private int size;
+	private Constants constants;
 	
 	public Bike (String color, int size) {
-		this.color = color; 
-		this.size = size; 
+		constants = new Constants();
+		this.color = color;
+		this.size = size;
 	}
 	
 	public Bike (String color, int size, int price) {
+		constants = new Constants();
 		this.color = color; 
 		this.size = size; 	
 		this.price = price; 
@@ -17,7 +20,8 @@ public class Bike {
 	
 	//Methods
 	public String getColor() {
-		return this.color; 
+		//constants.bikeColors
+		return this.color;
 	}
 	
 	public int getPrice() {
@@ -30,5 +34,7 @@ public class Bike {
 	public void setPrice(int price) {
 		//code
 	}
+	
+	
 	
 }
