@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Constants {
 	public static final int MIN_SIZE = 8;
