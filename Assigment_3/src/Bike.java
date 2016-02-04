@@ -1,13 +1,17 @@
 
+/** This the model class for a bike */
 public class Bike {
 	private String color;
 	private int price;
 	private int size;
-	//private Constants constants;
 	
 	public Bike (String color, int size) {
-		//constants = new Constants();
-		this.color = color;
+		this.color = "black";	
+		for (String s : Constants.COLORS){
+			if (s.toLowerCase().equals(color.toLowerCase())){
+				this.color = color;
+			}
+		}
 		
 		if (size < Constants.MIN_SIZE) {
 			this.size = Constants.MIN_SIZE;
@@ -19,10 +23,12 @@ public class Bike {
 	
 	}
 	
+	/** Constructor with color, size and price parameters.
+	 * @param color describes the color of the bike
+	 * @param size the size of the bike
+	 * @param price how much it costs
+	 * */
 	public Bike (String color, int size, int price) {
-		//constants = new Constants();
-		this.color = color; 
-		
 		if (size < Constants.MIN_SIZE) {
 			this.size = Constants.MIN_SIZE;
 		} else if (size > Constants.MAX_SIZE) {
@@ -38,22 +44,31 @@ public class Bike {
 		} else {
 			this.price = price; 
 		}
-	
+		
+		this.color = "black";
+		for (String s : Constants.COLORS){
+			if (s.toLowerCase().equals(color.toLowerCase())){
+				this.color = color;
+			}
+		}
+		
 	}
 	
-	//Methods
+	/** Method to get color */
 	public String getColor() {
-		//constants.bikeColors
 		return color;
 	}
 	
+	/** Method to get price */
 	public int getPrice() {
-		return size;
-	}
-	
-	public int getSize() {
 		return price;
 	}
+	
+	/** Method to get size */
+	public int getSize() {
+		return size;
+	}
+	/** Method that set the price */
 	public void setPrice(int price) {
 		if (price < Constants.MIN_PRICE) {
 			this.price = Constants.MIN_PRICE;
