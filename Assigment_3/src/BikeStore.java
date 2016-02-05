@@ -6,7 +6,7 @@ public class BikeStore {
 	public String getAllBikes() {
 		String _bikesString = new String();
 		for (Bike _bike : bikes) {
-			_bikesString = _bikesString + "Cykel nr " + (bikes.indexOf(_bike) + 1) + " Pris " + _bike.getPrice() + " Farg " + _bike.getColor() + " Storlek " + _bike.getSize() + "\n";
+			_bikesString = _bikesString + "Cykel nr " + (bikes.indexOf(_bike) + 1) + " Pris " + _bike.getPrice() + " Färg " + _bike.getColor() + " Storlek " + _bike.getSize() + "\n";
 		}
 		return _bikesString;
 	}

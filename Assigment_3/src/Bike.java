@@ -6,7 +6,7 @@ public class Bike {
 	private int size;
 	
 	public Bike (String color, int size) {
-		this.color = "black";	
+		this.color = "Svart";	
 		for (String s : Constants.COLORS){
 			if (s.toLowerCase().equals(color.toLowerCase())){
 				this.color = color;
@@ -45,7 +45,7 @@ public class Bike {
 			this.price = price; 
 		}
 		
-		this.color = "black";
+		this.color = "Svart";
 		for (String s : Constants.COLORS){
 			if (s.toLowerCase().equals(color.toLowerCase())){
 				this.color = color;
