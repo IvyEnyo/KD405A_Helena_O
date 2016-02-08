@@ -1,17 +1,13 @@
 
 public class Snake {
-	private int numberOfLifes; 
+	private boolean poisonus; 
 	
-	public Cat(String latinName, int gestationTime, int numberOfLifes) {
-		//some code
+	public Snake(String latinName, boolean poisonus) {
+		// Some Code
 	}
-	
-	public int getNumberOfLifes() {
-		return this.numberOfLifes;
-	}
-	
-	public int setNumberOfLifes(int i) {
-		return this.numberOfLifes; 
+
+	public boolean isPoisnous() {
+		return this.poisonus;
 	}
 
 }
