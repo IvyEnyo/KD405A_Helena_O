@@ -7,7 +7,7 @@ public abstract class Mammal {
 	}
 	
 	public int getGestationtime() {
-		// some code
+		return this.gestationTime;
 	}
 
 }
