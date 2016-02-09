@@ -17,9 +17,9 @@ public class Human {
 	
 	public String getInfo() {
 		if (dog != null) {
-			return name + " ager en hund som heter " + dog.getName();
+			return name + " äger en hund som heter " + dog.getName();
 		} else {
-			return "ager ingen hund";
+			return "äger ingen hund";
 		}
 		
 	}

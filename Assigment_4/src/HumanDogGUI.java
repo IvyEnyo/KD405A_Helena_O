@@ -76,7 +76,7 @@ public class HumanDogGUI extends JFrame {
 		btnHuman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(textFieldHuman.getText().length() < 3) {
-					textAreaErroM.setText("Saknas bokstaver");
+					textAreaErroM.setText("Saknas bokstäver i human");
 					textFieldHuman.setText("");
 				} else {
 					human = new Human(textFieldHuman.getText());
@@ -91,7 +91,7 @@ public class HumanDogGUI extends JFrame {
 		btnDog.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (textFieldHuman.getText().length() < 3) {
-					textAreaErroM.setText("Det saknas en agare");
+					textAreaErroM.setText("Det saknas en ägare");
 					textFieldDog.setText("");
 				} else {
 					dog = new Dog(textFieldDog.getText());
