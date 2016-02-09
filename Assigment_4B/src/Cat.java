@@ -1,9 +1,10 @@
 
-public class Cat {
+public class Cat extends Mammal {
 	private int numnberOfLifes; 
 	
 	public Cat(String latinName, int gestationTime, int numberOfLifes) {
-		// Some code
+		super(latinName, gestationTime);
+		this.numnberOfLifes = numberOfLifes;	
 	}
 	
 	public int getNumberOfLifes() {
@@ -12,7 +13,13 @@ public class Cat {
 	
 	public int setNumbersOfLifes(int i) {
 		return this.numnberOfLifes;
-		// Some code
+
+	}
+
+	@Override
+	public String getInfo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

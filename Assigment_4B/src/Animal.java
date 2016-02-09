@@ -1,18 +1,20 @@
 
 public abstract class Animal {
-	private String latinName; 
-	private String friendlyName; 
+	private String latinName;
+	private String friendlyName;
 	
 	public Animal(String latinName) {
-		// Some code
+		this.latinName = latinName; 
 	}
 	
-	/*public abstract String getInfo() {
-		// Some code
-	} */
+	public abstract String getInfo();
 	
-	public String setFriendlyName(String friendlyName) {
-		return this.friendlyName;
+	public String getLatinName() {
+		return this.latinName;
+	}
+	
+	public void setFriendlyName(String friendlyName) {
+		this.friendlyName = friendlyName;
 	}
 	
 	public String getFriendlyName() {

@@ -1,9 +1,14 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import java.awt.Color;
 
 public class AnimalGUI extends JFrame {
 
@@ -32,9 +37,32 @@ public class AnimalGUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(224, 255, 255));
+		contentPane.setForeground(new Color(169, 169, 169));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblAnimals = new JLabel("Animals");
+		lblAnimals.setForeground(new Color(0, 0, 0));
+		lblAnimals.setBounds(6, 6, 60, 16);
+		contentPane.add(lblAnimals);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(6, 30, 438, 242);
+		contentPane.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
+
+		
+		ArrayList <Animal> myAnimals = new ArrayList<Animal>();
+		myAnimals.add(new Dog("Dogus", 4, false, "kajsa"));
+		
+		for(Animal anAnimal : myAnimals) {
+			textArea.setText(anAnimal.getInfo());
+		}
+		
 	}
 
 }
