@@ -4,7 +4,7 @@ public class Dog {
 	
 	
 	public Dog (String name) {
-		//some code
+		this.name = name;
 	}
 
 }

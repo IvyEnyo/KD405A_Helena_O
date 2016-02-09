@@ -1,22 +1,27 @@
 
 public class Human {
+	private Dog dog;
 	private String name; 
 	
 	public Human(String name) {
-		//some code 
+		this.name = name;
 	}
 	
 	public String getName() {
-		return this.name; 
+		return name; 
 	}
-	public byDog() {
-		//some cod 
+	
+	public void buyDog(Dog dog) {
+		this.dog = dog;
 	}
 	
 	public String getInfo() {
-		/* should return "X äger en hund som heter y" 
-		 * or "x äger ingen hund"
-		 */
+		if (dog != null) {
+			return name + " ager en hund som heter " + dog;
+		} else {
+			return "ager ingen hund";
+		}
+		
 	}
 }
 		
