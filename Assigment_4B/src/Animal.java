@@ -6,7 +6,7 @@ public abstract class Animal {
 	
 	/** Creates a animal
 	 * 
-	 * @param LatinName the Latin name of the animal 
+	 * @param latinName the Latin name of the animal 
 	 */ 
 	public Animal(String latinName) {
 		this.latinName = latinName; 

@@ -4,7 +4,7 @@ public class Snake extends Animal {
 	
 	/** Creates the snake
 	 * @param latinName the Latin name of the snake
-	 * @param poisnous is the snake poisonous?
+	 * @param poisonus is the snake poisonous?
 	 */
 	public Snake(String latinName, boolean poisonus) {
 		super(latinName);

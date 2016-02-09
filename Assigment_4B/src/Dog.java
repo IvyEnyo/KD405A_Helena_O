@@ -19,8 +19,8 @@ public class Dog extends Mammal {
 	 * @param stupid  is the dog stupid or not?
 	 * @param friendlyName the name of the dog
 	 */
-	public Dog(String latinName, int gesationTime, boolean stupid, String friendlyName) {
-		super(latinName, gesationTime);
+	public Dog(String latinName, int gestationTime, boolean stupid, String friendlyName) {
+		super(latinName, gestationTime);
 		this.stupid = stupid;
 		this.setFriendlyName(friendlyName);
 	}
