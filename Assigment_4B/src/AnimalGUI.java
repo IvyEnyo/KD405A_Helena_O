@@ -55,14 +55,18 @@ public class AnimalGUI extends JFrame {
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
 
-		
+		// Add the animals to the list. 
 		ArrayList <Animal> myAnimals = new ArrayList<Animal>();
 		myAnimals.add(new Dog("Dogus", 4, false, "kajsa"));
+		myAnimals.add(new Cat("kattus", 5, 10));
+		myAnimals.add(new Snake("Python", true));
+		myAnimals.add(new Dog("Dogus", 3, true, "Fido"));
+		myAnimals.add(new Cat("kattus de katt", 5, 35));
+		myAnimals.add(new Snake("snokus", false));
+		
 		
 		for(Animal anAnimal : myAnimals) {
-			textArea.setText(anAnimal.getInfo());
-		}
-		
+			textArea.setText(textArea.getText() + anAnimal.getInfo() + "\n");
+		}	
 	}
-
 }
