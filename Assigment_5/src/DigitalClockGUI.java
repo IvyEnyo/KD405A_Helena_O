@@ -17,6 +17,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 
 public class DigitalClockGUI extends JFrame {
@@ -27,11 +28,12 @@ public class DigitalClockGUI extends JFrame {
 	private JLabel labelTimeActive;
 	private JComboBox comboBoxMin;
 	private JComboBox comboBoxHour;
-	private int [] comboHour = {1,2,3,4,5,6,7,8,9,10};
-	private	int [] comboMinute = {1,2,3,4,5,6};
+	private int [] comboHour = new int [24];
+	private	int [] comboMinute = new int[60];
 	private String stringMinute; 
 	private String stringHour;
-	private boolean activate; 
+
+
 	
 	/**
 	 * Launch the application.
@@ -53,6 +55,7 @@ public class DigitalClockGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public DigitalClockGUI() {
+		
 		setTitle("Alarm");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 230);
@@ -75,8 +78,8 @@ public class DigitalClockGUI extends JFrame {
 		JButton btnSet = new JButton("Set");
 		btnSet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				labelTimeActive.setText(stringHour + ":" + stringMinute);
-				activate = true; 				
+				labelTimeActive.setText(comboBoxHour.getSelectedItem().toString() + ":" + comboBoxMin.getSelectedItem().toString());
+				clockLogic.setAlarm(comboHour[comboBoxHour.getSelectedIndex()], comboMinute[comboBoxMin.getSelectedIndex()]);
 			}
 		});
 		btnSet.setBounds(363, 72, 95, 29);
@@ -87,27 +90,27 @@ public class DigitalClockGUI extends JFrame {
 		comboBoxMin.setBounds(413, 33, 69, 27);
 		contentPane.add(comboBoxMin);
 		comboBoxMin.setAlignmentX(RIGHT_ALIGNMENT);
+		comboBoxMin.setMaximumRowCount(10);
 		
-		for (int i = 0; i < comboMinute.length; i++) {
-			//System.out.println(comboMinute[i]+ "");
-			stringMinute = String.format("%02d", comboMinute[i]);
+		for (int i = 0; i <= 59; i++) {
+			stringMinute = String.format("%02d", i);
 			comboBoxMin.addItem(stringMinute);
-			comboBoxMin.setMaximumRowCount(6);
+			comboMinute[i] = i;
 		}
-		
+
 		comboBoxHour = new JComboBox();
 		comboBoxHour.setBounds(343, 33, 69, 27);
 		contentPane.add(comboBoxHour);
 		comboBoxHour.setAlignmentX(RIGHT_ALIGNMENT);
+		comboBoxHour.setMaximumRowCount(10);
 		
-		for (int i = 0; i < comboHour.length; i++) {
-			//System.out.println(comboHour[i] + "");
-			stringHour = String.format("%02d", comboHour[i]);
+		for (int i = 0; i <= 23; i++) {
+			stringHour = String.format("%02d", i);
 			comboBoxHour.addItem(stringHour);
-			comboBoxHour.setMaximumRowCount(6);
+			comboHour[i] = i;
 		}
 		
-		labelTime = new JLabel("22:00");
+		labelTime = new JLabel("");
 		labelTime.setForeground(new Color(127, 255, 0));
 		labelTime.setFont(new Font("OCR A Std", Font.PLAIN, 36));
 		labelTime.setHorizontalAlignment(JLabel.CENTER);
@@ -127,13 +130,10 @@ public class DigitalClockGUI extends JFrame {
 		labelSetAlarm.setBounds(330, 6, 164, 108);
 		contentPane.add(labelSetAlarm);
 		
-		
 		JLabel labelActiveAlarm = new JLabel("");
 		labelActiveAlarm.setBorder(new TitledBorder("alarm set"));
 		labelActiveAlarm.setBounds(330, 113, 164, 89);
 		contentPane.add(labelActiveAlarm);
-		
-	
 		
 		clockLogic = new ClockLogic(this);
 	}
@@ -144,7 +144,7 @@ public class DigitalClockGUI extends JFrame {
 	
 	public void activateAlarm(boolean activate) { 
 		if (activate) {
-			
+			Toolkit.getDefaultToolkit().beep();
 		}
 	
 	}

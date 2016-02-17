@@ -1,9 +1,11 @@
+
 import java.util.Calendar;
 
 public class ClockLogic {
 	private DigitalClockGUI clockGUI; 
 	private int alarmHour;
 	private int alarmMinute; 
+	private boolean alarmActive = false;
 	
 	public ClockLogic(DigitalClockGUI digitalClockGUI) {
 		this.clockGUI = digitalClockGUI;
@@ -24,17 +26,24 @@ public class ClockLogic {
 				int minute = cal.get(Calendar.MINUTE);
 				String hoursString = String.format("%02d", hours);
 				String minuteString = String.format("%02d", minute);
-				clockGUI.setTimeOnLabel(hoursString + ":" + minuteString); 
+				clockGUI.setTimeOnLabel(hoursString + ":" + minuteString);
+				if (alarmHour == hours && alarmMinute == minute) {
+					alarmActive = true;
+				}
+				clockGUI.activateAlarm(alarmActive);
 			}
 		}
 	}
 	
 	public void setAlarm(int hours, int minute) {
-		// Some code
+		this.alarmHour = hours;
+		this.alarmMinute = minute;
 	}
 	
 	public void clearAlarm() {
-		// Some code
+		alarmActive = false;
+		this.alarmHour = -1;
+		this.alarmMinute = -1;
 	}
 
 }
