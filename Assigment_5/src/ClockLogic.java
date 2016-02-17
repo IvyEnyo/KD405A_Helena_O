@@ -30,8 +30,7 @@ public class ClockLogic {
 	}
 	
 	public void setAlarm(int hours, int minute) {
-		this.alarmHour = hours;
-		this.alarmMinute = minute; 
+		// Some code
 	}
 	
 	public void clearAlarm() {

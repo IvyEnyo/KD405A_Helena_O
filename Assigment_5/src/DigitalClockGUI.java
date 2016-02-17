@@ -24,10 +24,14 @@ public class DigitalClockGUI extends JFrame {
 	private JPanel contentPane;
 	private ClockLogic clockLogic;
 	private JLabel labelTime;
+	private JLabel labelTimeActive;
 	private JComboBox comboBoxMin;
 	private JComboBox comboBoxHour;
 	private int [] comboHour = {1,2,3,4,5,6,7,8,9,10};
 	private	int [] comboMinute = {1,2,3,4,5,6};
+	private String stringMinute; 
+	private String stringHour;
+	private boolean activate; 
 	
 	/**
 	 * Launch the application.
@@ -61,6 +65,7 @@ public class DigitalClockGUI extends JFrame {
 		JButton btnClear = new JButton("clear");
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				labelTimeActive.setText("");
 				clockLogic.clearAlarm();
 			}
 		});
@@ -70,6 +75,8 @@ public class DigitalClockGUI extends JFrame {
 		JButton btnSet = new JButton("Set");
 		btnSet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				labelTimeActive.setText(stringHour + ":" + stringMinute);
+				activate = true; 				
 			}
 		});
 		btnSet.setBounds(363, 72, 95, 29);
@@ -83,7 +90,7 @@ public class DigitalClockGUI extends JFrame {
 		
 		for (int i = 0; i < comboMinute.length; i++) {
 			//System.out.println(comboMinute[i]+ "");
-			String stringMinute = String.format("%02d", comboMinute[i]);
+			stringMinute = String.format("%02d", comboMinute[i]);
 			comboBoxMin.addItem(stringMinute);
 			comboBoxMin.setMaximumRowCount(6);
 		}
@@ -95,7 +102,7 @@ public class DigitalClockGUI extends JFrame {
 		
 		for (int i = 0; i < comboHour.length; i++) {
 			//System.out.println(comboHour[i] + "");
-			String stringHour = String.format("%02d", comboHour[i]);
+			stringHour = String.format("%02d", comboHour[i]);
 			comboBoxHour.addItem(stringHour);
 			comboBoxHour.setMaximumRowCount(6);
 		}
@@ -108,6 +115,11 @@ public class DigitalClockGUI extends JFrame {
 		labelTime.setBounds(40, 64, 258, 72);
 		contentPane.add(labelTime);
 		
+		labelTimeActive = new JLabel("");
+		labelTimeActive.setBackground(new Color(255, 0, 0));
+		labelTimeActive.setBounds(360, 126, 98, 29);
+		labelTimeActive.setForeground(new Color(225,0,0));
+		contentPane.add(labelTimeActive);
 		
 		JLabel labelSetAlarm = new JLabel("");
 		labelSetAlarm.setHorizontalAlignment(JLabel.CENTER);
@@ -115,14 +127,13 @@ public class DigitalClockGUI extends JFrame {
 		labelSetAlarm.setBounds(330, 6, 164, 108);
 		contentPane.add(labelSetAlarm);
 		
+		
 		JLabel labelActiveAlarm = new JLabel("");
 		labelActiveAlarm.setBorder(new TitledBorder("alarm set"));
 		labelActiveAlarm.setBounds(330, 113, 164, 89);
 		contentPane.add(labelActiveAlarm);
 		
-		JLabel lableTimeActive = new JLabel("New label");
-		lableTimeActive.setBounds(380, 137, 61, 16);
-		contentPane.add(lableTimeActive);
+	
 		
 		clockLogic = new ClockLogic(this);
 	}
@@ -131,8 +142,11 @@ public class DigitalClockGUI extends JFrame {
 		labelTime.setText(time);
 	}
 	
-	public void activateAlarm(boolean activate) {
-		// Some code
+	public void activateAlarm(boolean activate) { 
+		if (activate) {
+			
+		}
+	
 	}
 }
-	
+
