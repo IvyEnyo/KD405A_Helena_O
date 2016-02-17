@@ -76,7 +76,6 @@ public class DigitalClockGUI extends JFrame {
 			String stringMinute = String.format("%02d", comboMinute[i]);
 			comboBoxMin.addItem(stringMinute);
 			comboBoxMin.setMaximumRowCount(6);
-
 		}
 		
 		comboBoxHour = new JComboBox();
@@ -91,13 +90,12 @@ public class DigitalClockGUI extends JFrame {
 			comboBoxHour.setMaximumRowCount(6);
 		}
 		
-		
 		labelTime = new JLabel("22:00");
 		labelTime.setForeground(new Color(127, 255, 0));
 		labelTime.setFont(new Font("OCR A Std", Font.PLAIN, 36));
 		labelTime.setHorizontalAlignment(JLabel.CENTER);
 		labelTime.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		labelTime.setBounds(60, 48, 258, 72);
+		labelTime.setBounds(40, 64, 258, 72);
 		contentPane.add(labelTime);
 		
 		
@@ -121,6 +119,10 @@ public class DigitalClockGUI extends JFrame {
 	
 	public void setTimeOnLabel(String time) {
 		labelTime.setText(time);
+	}
+	
+	public void activateAlarm(boolean activate) {
+		// Some code
 	}
 }
 	
