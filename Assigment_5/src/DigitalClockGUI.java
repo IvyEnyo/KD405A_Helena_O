@@ -17,6 +17,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionListener;
 
 public class DigitalClockGUI extends JFrame {
 
@@ -58,10 +59,19 @@ public class DigitalClockGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnClear = new JButton("clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clockLogic.clearAlarm();
+			}
+		});
 		btnClear.setBounds(363, 165, 95, 29);
 		contentPane.add(btnClear);
 		
 		JButton btnSet = new JButton("Set");
+		btnSet.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnSet.setBounds(363, 72, 95, 29);
 		contentPane.add(btnSet);
 		
