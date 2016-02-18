@@ -111,7 +111,7 @@ public class DigitalClockGUI extends JFrame {
 		}
 		
 		labelTime = new JLabel("");
-		labelTime.setForeground(new Color(127, 255, 0));
+		labelTime.setForeground(new Color(255, 165, 0));
 		labelTime.setFont(new Font("OCR A Std", Font.PLAIN, 36));
 		labelTime.setHorizontalAlignment(JLabel.CENTER);
 		labelTime.setBorder(new BevelBorder(BevelBorder.LOWERED));
@@ -119,9 +119,11 @@ public class DigitalClockGUI extends JFrame {
 		contentPane.add(labelTime);
 		
 		labelTimeActive = new JLabel("");
-		labelTimeActive.setBackground(new Color(255, 0, 0));
+		labelTimeActive.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		labelTimeActive.setHorizontalAlignment(JLabel.CENTER);
+		labelTimeActive.setBackground(new Color(0, 0, 0));
 		labelTimeActive.setBounds(360, 126, 98, 29);
-		labelTimeActive.setForeground(new Color(225,0,0));
+		labelTimeActive.setForeground(new Color(255, 165, 0));
 		contentPane.add(labelTimeActive);
 		
 		JLabel labelSetAlarm = new JLabel("");
