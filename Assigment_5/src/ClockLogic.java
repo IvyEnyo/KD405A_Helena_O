@@ -7,16 +7,18 @@ public class ClockLogic {
 	private int alarmMinute; 
 	private boolean alarmActive = false;
 	
+	/** defined the clockGUI and ClockTread, starts the thread */
 	public ClockLogic(DigitalClockGUI digitalClockGUI) {
 		this.clockGUI = digitalClockGUI;
 		ClockThread clockThread = new ClockThread();
 		clockThread.start();
 	}
 	
+	/** This Class update the clock and checks if the alarm is equal to the clock.
+	 * And if the alarm is equal, it calls for the activateAlarm method */
 	private class ClockThread extends Thread {
 		@Override
 		public void run() {
-			
 			while(true) {
 				try {
 					Thread.sleep(900);
@@ -35,11 +37,15 @@ public class ClockLogic {
 		}
 	}
 	
+	/** Sets the alarm
+	 * @param 	int hours 
+	 * @param	int minute  */
 	public void setAlarm(int hours, int minute) {
 		this.alarmHour = hours;
 		this.alarmMinute = minute;
 	}
 	
+	/** Clear the alarm. The clock can never be -1 */
 	public void clearAlarm() {
 		alarmActive = false;
 		this.alarmHour = -1;
