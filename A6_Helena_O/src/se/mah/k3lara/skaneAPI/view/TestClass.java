@@ -12,12 +12,13 @@ import se.mah.k3lara.skaneAPI.model.Station;
 import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 
 public class TestClass {
-
+	/* Gives us from, to and how many serach result we want. */
 	public static void main(String[] args) {
-		String searchURL = Constants.getURL("80000","81216",20); //Malmö C = 80000,  Lund C, 81216 Malmö Gatorg 80100, Hässleholm C 93070
+		String searchURL = Constants.getURL("80000","81216",20); //Malmï¿½ C = 80000,  Lund C, 81216 Malmï¿½ Gatorg 80100, Hï¿½ssleholm C 93070
 		System.out.println(searchURL);
 		System.out.println("// Results when searching:");
 		
+		/* Shows us when the bus departs and arrive and how many minutes the transportation is late */
 		Journeys journeys = Parser.getJourneys(searchURL);
 		for (Journey journey : journeys.getJourneys()) {
 			System.out.print(journey.getStartStation()+" - ");
@@ -26,6 +27,7 @@ public class TestClass {
 			System.out.println(" Departs " + time +" that is in "+journey.getTimeToDeparture()+ " minutes. And it is "+journey.getDepTimeDeviation()+" min late");
 		} 
 		
+		/* Gives us stations from url Malm and the stations numbers  */
 	   System.out.println("// Stations when searching for stations containing \"Malm\"");
 		ArrayList<Station> searchStations = new ArrayList<Station>(); 
 		searchStations.addAll(Parser.getStationsFromURL("Malm"));
@@ -33,7 +35,8 @@ public class TestClass {
 			System.out.println(s.getStationName() +" number:" +s.getStationNbr());
 		}
 		
-		System.out.println("// Busses departing from Ubåtshallen stationsnummer 80046 ");
+		/*Gives us the line number and when it departs and how many minutes its late.*/
+		System.out.println("// Busses departing from Ubï¿½tshallen stationsnummer 80046 ");
 		Lines lines = Parser.getStationResults(new Station("80046"));
 		for (Line l : lines.getLines()) {
 			System.out.println("Line " + l.getLine() +" departs: "+l.getDepTime().get(Calendar.HOUR_OF_DAY)+":"+l.getDepTime().get(Calendar.MINUTE)+
