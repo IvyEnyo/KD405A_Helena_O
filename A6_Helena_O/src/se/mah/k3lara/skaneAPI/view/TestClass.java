@@ -27,8 +27,10 @@ public class TestClass {
 			System.out.println(" Departs " + time +" that is in "+journey.getTimeToDeparture()+ " minutes. And it is "+journey.getDepTimeDeviation()+" min late");
 		} 
 		
-		/* Gives us stations from url Malm and the stations numbers  */
+
 	   System.out.println("// Stations when searching for stations containing \"Malm\"");
+	   
+	   /* Makes a new ArrayList for stations we want from the class Station, in this case containing malm*/
 		ArrayList<Station> searchStations = new ArrayList<Station>(); 
 		searchStations.addAll(Parser.getStationsFromURL("Malm"));
 		for (Station s: searchStations){
