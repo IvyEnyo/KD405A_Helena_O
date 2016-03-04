@@ -41,37 +41,13 @@ public class TryIt extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		
-		
-		/*PixelController [] pixelControllers = {
-				PixelController.getInstance(Screen.FLOOR_5), 
-				PixelController.getInstance(Screen.MEDEA_1),
-				PixelController.getInstance(Screen.MEDEA_2), 
-				PixelController.getInstance(Screen.MEDEA_3)}; */
-
-		//Random randomGen = new Random();
-		/*
-		for(int i = 0; i < pixelControllers.length; i++) {
-			for(int j = 0; j < 2; j ++) {
-				int x1 = randomGen.nextInt(1000);
-				int y1 = randomGen.nextInt(1000);
-				int x2 = randomGen.nextInt(1000);
-				int y2 = randomGen.nextInt(1000);
-
-				
-				drawMushroom(pixelControllers[i], x1, y1, Color.RED);
-				drawMushroom(pixelControllers[i], x2, y2,Color.GREEN);
-			}
-		}	*/
-		//int x1 = randomGen.nextInt(1000);
-		//int y1 = randomGen.nextInt(1000);
-		//int x2 = randomGen.nextInt(1000);
-		//int y2 = randomGen.nextInt(1000);
-		
+		// call the method, x, y and a color of choice 
 		drawMushroom(0, 0, Color.RED);
 		drawMushroom(17, 0,Color.GREEN);
+		
 	}
-
+		
+	// This Method draws the mushroom. 
 	public void drawMushroom(int x, int y, Color r) {
 
 		PixelController px = PixelController.getInstance(Screen.MEDEA_3);
@@ -83,10 +59,9 @@ public class TryIt extends JFrame {
 			e.printStackTrace();
 		}
 		
+		/* Colors in the array */ 
 		Color b = Color.BLACK;
-		//Color r = Color.RED;
 		Color w = Color.WHITE;
-		//Color g = Color.GREEN;
 		Color n = null;
 		
 		Color[][] superMushroom = {
@@ -95,7 +70,7 @@ public class TryIt extends JFrame {
 				{n,n,b,w,w,r,r,r,r,w,w,w,w,b,n,n},
 				{n,b,w,w,r,r,r,r,r,r,w,w,w,w,b,n},
 				{n,b,w,r,r,w,w,w,w,r,r,w,w,w,b,n},
-				{b,r,r,r,w,w,w,w,w,w,r,r,r                ,r,r,b},
+				{b,r,r,r,w,w,w,w,w,w,r,r,r,r,r,b},
 				{b,r,r,r,w,w,w,w,w,w,r,r,w,w,r,b},
 				{b,w,r,r,w,w,w,w,w,w,r,w,w,w,w,b},
 				{b,w,w,r,r,w,w,w,w,r,r,w,w,w,w,b},
@@ -107,7 +82,7 @@ public class TryIt extends JFrame {
 				{n,n,n,b,w,w,w,w,w,w,w,w,b,n,n,n},
 				{n,n,n,n,b,b,b,b,b,b,b,b,n,n,n,n}
 		}; 
-		/*räknar från vänster nedre hörn. kontrollera XY i Mushroom för färg....*/
+		/* loops out the color of the mushroom from the array */
 		for(int i = 15; i >= 0; i --) {
 			for(int j = 0; j < 16; j ++) {
 				if(superMushroom[i][j] != null ){
