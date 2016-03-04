@@ -1,0 +1,122 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.util.Random;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import se.mah.k3.klara.PixelController;
+import se.mah.k3.klara.PixelController.Screen;
+
+public class TryIt extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TryIt frame = new TryIt();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public TryIt() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		
+		
+		/*PixelController [] pixelControllers = {
+				PixelController.getInstance(Screen.FLOOR_5), 
+				PixelController.getInstance(Screen.MEDEA_1),
+				PixelController.getInstance(Screen.MEDEA_2), 
+				PixelController.getInstance(Screen.MEDEA_3)}; */
+
+		//Random randomGen = new Random();
+		/*
+		for(int i = 0; i < pixelControllers.length; i++) {
+			for(int j = 0; j < 2; j ++) {
+				int x1 = randomGen.nextInt(1000);
+				int y1 = randomGen.nextInt(1000);
+				int x2 = randomGen.nextInt(1000);
+				int y2 = randomGen.nextInt(1000);
+
+				
+				drawMushroom(pixelControllers[i], x1, y1, Color.RED);
+				drawMushroom(pixelControllers[i], x2, y2,Color.GREEN);
+			}
+		}	*/
+		//int x1 = randomGen.nextInt(1000);
+		//int y1 = randomGen.nextInt(1000);
+		//int x2 = randomGen.nextInt(1000);
+		//int y2 = randomGen.nextInt(1000);
+		
+		drawMushroom(0, 0, Color.RED);
+		drawMushroom(17, 0,Color.GREEN);
+	}
+
+	public void drawMushroom(int x, int y, Color r) {
+
+		PixelController px = PixelController.getInstance(Screen.MEDEA_3);
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Color b = Color.BLACK;
+		//Color r = Color.RED;
+		Color w = Color.WHITE;
+		//Color g = Color.GREEN;
+		Color n = null;
+		
+		Color[][] superMushroom = {
+				{n,n,n,n,n,b,b,b,b,b,b,n,n,n,n,n},
+				{n,n,n,b,b,r,r,r,r,w,w,b,b,n,n,n},
+				{n,n,b,w,w,r,r,r,r,w,w,w,w,b,n,n},
+				{n,b,w,w,r,r,r,r,r,r,w,w,w,w,b,n},
+				{n,b,w,r,r,w,w,w,w,r,r,w,w,w,b,n},
+				{b,r,r,r,w,w,w,w,w,w,r,r,r                ,r,r,b},
+				{b,r,r,r,w,w,w,w,w,w,r,r,w,w,r,b},
+				{b,w,r,r,w,w,w,w,w,w,r,w,w,w,w,b},
+				{b,w,w,r,r,w,w,w,w,r,r,w,w,w,w,b},
+				{b,w,w,r,r,r,r,r,r,r,r,r,w,w,r,b},
+				{b,w,r,r,b,b,b,b,b,b,b,b,r,r,r,b},
+				{n,b,b,b,w,w,b,w,w,b,w,w,b,b,b,n},
+				{n,n,b,w,w,w,b,w,w,b,w,w,w,b,n,n},
+				{n,n,b,w,w,w,w,w,w,w,w,w,w,b,n,n},
+				{n,n,n,b,w,w,w,w,w,w,w,w,b,n,n,n},
+				{n,n,n,n,b,b,b,b,b,b,b,b,n,n,n,n}
+		}; 
+		/*räknar från vänster nedre hörn. kontrollera XY i Mushroom för färg....*/
+		for(int i = 15; i >= 0; i --) {
+			for(int j = 0; j < 16; j ++) {
+				if(superMushroom[i][j] != null ){
+					px.setPixel(x + i, y + j, superMushroom[i][j]);
+					//System.out.print(superMushroom[y][x].toString());
+				}
+			}
+		} 
+		
+		
+	}
+}
